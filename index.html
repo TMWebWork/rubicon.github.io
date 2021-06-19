@@ -136,17 +136,17 @@
 
       <div class="slider-container">
         <div class="swiper-button swiper-mob-next">
-          <img src="images/dist/icon/next.png" alt="">
+          <img src="images/dist/icon/next-s.png" alt="">
         </div>
         <div class="swiper-button swiper-mob-prev">
-          <img src="images/dist/icon/prev.png" alt="">
+          <img src="images/dist/icon/prev-s.png" alt="">
         </div>
         <div class="swiper-container summer-swiper">
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
               <div class="block">
-                <img src="images/dist/slider1.jpg" alt="">
+                <img src="images/dist/summer-img1.jpg" alt="">
                 <div class="info">
                   <span>1</span>
                   <div class="text">
@@ -158,7 +158,7 @@
 
             <div class="swiper-slide">
               <div class="block">
-                <img src="images/dist/slider1.jpg" alt="">
+                <img src="images/dist/summer-img2.jpg" alt="">
                 <div class="info">
                   <span>2</span>
                   <div class="text">
@@ -170,7 +170,7 @@
 
             <div class="swiper-slide">
               <div class="block">
-                <img src="images/dist/slider1.jpg" alt="">
+                <img src="images/dist/summer-img3.jpg" alt="">
                 <div class="info">
                   <span>3</span>
                   <div class="text">
@@ -182,6 +182,7 @@
 
 
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
@@ -473,11 +474,13 @@
   </section>
 
 
-  <section class="form-section">
+  <section class="form-sec">
     <div class="container">
       <div class="flex">
         <div class="col">
-          <img src="images/dist/form-img.png" alt="">
+          <div class="form-img">
+            <img src="images/dist/form-img.png" alt="">
+          </div>
         </div>
         <div class="col">
           <h2>Менеджер поможет
@@ -490,10 +493,10 @@
           <input type="text" placeholder="Ваше имя">
           <input type="tel" placeholder="+7">
           <div class="check">
-            <input type="text">
-            <label for="">С политикой конфиденциальности ознакомлен и согласен</label>
+            <input id="check3" type="checkbox">
+            <label for="check3">С политикой конфиденциальности ознакомлен и согласен</label>
           </div>
-          <button>Жду звонка менеджера</button>
+          <button>Жду звонка <span>менеджера</span></button>
         </div>
       </div>
     </div>
@@ -502,11 +505,14 @@
 
   <section class="faq">
     <div class="container">
-      <h2>Для вас могут быть важны ответы на эти вопросы!</h2>
+      <h2>Для вас могут быть важны <br> ответы на эти вопросы!</h2>
       <div class="accordion">
         <div class="faq-item">
           <div class="faq-title">
             Ви заботитесь о безопасности детей?
+            <div class="faq-icon">
+              <img src="images/dist/icon/plus.svg" alt="">
+            </div>
           </div>
           <div class="faq-content">
             <p>
@@ -519,6 +525,9 @@
         <div class="faq-item">
           <div class="faq-title">
             Что будет с моей бронью, если вдруг обьявят карантин?
+            <div class="faq-icon">
+              <img src="images/dist/icon/plus.svg" alt="">
+            </div>
           </div>
           <div class="faq-content">
             <p>
@@ -531,6 +540,9 @@
         <div class="faq-item">
           <div class="faq-title">
             Что будет, если я передумаю после бронирования места (ребенок не сможет, изменятся планы и т.д)?
+            <div class="faq-icon">
+              <img src="images/dist/icon/plus.svg" alt="">
+            </div>
           </div>
           <div class="faq-content">
             <p>
@@ -545,6 +557,9 @@
   </section>
 
   <section class="contacts">
+    <div class="arrow-top">
+      <img src="images/dist/icon/arrow.png" alt="">
+    </div>
     <div class="container">
       <h2>Давайте дружить в социальных сетях</h2>
       <ul class="soc-link">
