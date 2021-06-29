@@ -1,0 +1,222 @@
+// USER VARIABLES SECTION
+
+$accent: #2362EE // Accent Color
+$titlecolor: #0B131F
+$fontsize: 18px // Body Font Size
+$textcolor: #8193A9 // Text Color
+$lineheight: 1.2 // Document Line Height
+$userfont: 'Open Sans', sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+$minWidth: 320px
+$maxWidth: 1920px
+$maxWidthContainer: 1254
+$md1: $maxWidthContainer + 12
+$md2: 991.98
+$md3: 767.98
+$md4: 575.98
+
+// IMPORT SECTION
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/swiper/swiper.scss'
+@import 'node_modules/magnific-popup/src/css/main.scss'
+
+// @mixin font($fname, $fstyle, $fweight, $furl)
+// 	@font-face
+// 		font-family: $fname
+// 		font-style: $fstyle
+// 		font-weight: $fweight
+// 		src: url($furl) format('woff2')
+
+// @include font('Xolonium', normal, bold, '../fonts/Xolonium-Bold.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: rgb(147, 145, 145)
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea, select
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	font-weight: 400
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+
+a
+	transition: .2s linear
+	text-decoration: none
+
+button
+	transition: .2s linear
+	text-decoration: none
+
+svg path,svg rect
+	transition: .2s linear
+
+a:hover
+	text-decoration: none
+	color: #fff
+
+a:focus,button:focus,input:focus,textarea:focus
+	outline: 0
+
+.container
+	max-width: 1260px
+	margin: 0 auto
+	padding: 0 15px
+	@media screen and ( max-width: $md1+px )
+		max-width: 970px
+	@media screen and ( max-width: $md2+px )
+		max-width: 750px
+	@media screen and ( max-width: $md3+px )
+		max-width: none
+
+p
+	font-size: $fontsize
+	line-height: 32px
+	font-weight: 500
+	color: $textcolor
+
+ul
+	padding-left: 0
+
+.object-fit
+	img
+		height: 100%
+		width: 100%
+		object-fit: cover
+
+.flex
+	display: flex
+
+.f-jc-sp
+	justify-content: space-between
+
+.f-jc-c
+	justify-content: center
+
+.f-jc-e
+	justify-content: flex-end
+
+.f-ai-c
+	align-items: center
+
+.f-ai-e
+	align-items: flex-end
+
+.d-block
+	display: block
+
+.d-none
+	display: none
+
+.d-lg-block
+	@media screen and ( min-width: $md2+px )
+		display: block
+
+.d-md-block
+	@media screen and ( min-width: $md3+px )
+		display: block
+
+.d-sm-block
+	@media screen and ( min-width: $md4+px )
+		display: block
+
+.d-lg-none
+	@media screen and ( min-width: $md2+px )
+		display: none
+
+.d-md-none
+	@media screen and ( min-width: $md3+px )
+		display: none
+
+.d-sm-none
+	@media screen and ( min-width: $md4+px )
+		display: none
+
+.main
+	overflow: hidden
+
+.menu_expand
+	overflow: hidden
+
+.middle-bg
+	background-image: url(../images/dist/middle-bg.jpg)
+	background-position: top center
+	background-repeat: no-repeat
+	@media screen and ( max-width: 750px )
+		background-image: url(../images/dist/middle-mob-bg.jpg)
+
+.bottom-bg
+	background-image: url(../images/dist/bottom-bg.jpg)
+	background-position: bottom center
+	background-repeat: no-repeat
+	@media screen and ( max-width: 750px )
+		background-image: url(../images/dist/bottom-mob-bg.jpg)
+	@media screen and ( max-width: $md4+px )
+		background-position: bottom -150px center
+
+.popup-block
+	padding: 60px 40px
+	background: #fff
+	margin: 0 auto
+	max-width: 500px
+	border-radius: 20px
+	position: relative
+	@media screen and ( max-width: $md4+px )
+		padding: 60px 15px
+
+	.close-popup
+		position: absolute
+		top: 20px
+		right: 20px
+		cursor: pointer
+
+		img
+			height: 20px
+			width: 20px
+
+	h2
+		font-size: 22px
+		text-align: center
+		margin-bottom: 0
+		color: #000
+
+.mfp-close-btn-in .mfp-close
+	display: none
+
+.mfp-zoom-in .mfp-with-anim
+	opacity: 0
+	transition: all .3s linear
+	transform: scale(0.8)
+.mfp-zoom-in.mfp-bg
+	opacity: 0
+	transition: all .4s linear
+.mfp-zoom-in.mfp-ready .mfp-with-anim
+	opacity: 1
+	transform: scale(1)
+.mfp-zoom-in.mfp-ready.mfp-bg
+	opacity: .8
+.mfp-zoom-in.mfp-removing .mfp-with-anim
+	transform: scale(0.8)
+	opacity: 0
+.mfp-zoom-in.mfp-removing.mfp-bg
+	opacity: 0
+
+.mfp-bg
+	background: rgba(0, 0, 0, 0.9)

@@ -1,0 +1,191 @@
+.form-sec
+  padding: 20px 0 50px
+  @media screen and ( max-width: $md3+px )
+    padding: 10px 0 71px
+  @media screen and ( max-width: $md4+px )
+    padding: 20px 0 30px
+
+  .container
+    max-width: 1300px
+
+  h2
+    font-size: 50px
+    color: #fff
+    text-align: left
+    line-height: 1
+    margin-bottom: 27px
+    @media screen and ( max-width: $md1+px )
+      font-size: 40px
+      line-height: 1.2
+    @media screen and ( max-width: $md3+px )
+      margin-bottom: 47px
+    @media screen and ( max-width:  $md4+px )
+      font-size: 30px
+      margin-bottom: 30px
+
+  .form-img
+    position: relative
+    top: 16px
+    left: -69px
+    @media screen and ( max-width: $md1+px )
+      left: 0
+    @media screen and ( max-width: $md2+px )
+      margin-bottom: 30px
+    @media screen and ( max-width: $md3+px )
+      margin-bottom: 17px
+      max-width: 464px
+      top: 0
+
+    img
+      @media screen and ( max-width: $md1+px )
+        max-width: 100%
+      @media screen and ( max-width: $md3+px )
+        max-width: 464px
+        width: 100%
+
+  .flex
+    @media screen and ( max-width: $md2+px )
+      flex-direction: column
+      align-items: center
+      justify-content: center
+
+    .col
+      flex-shrink: 1
+      position: relative
+      max-width: 100%
+
+      &:nth-child(2)
+        flex-basis: 540px
+        max-width: 540px
+        flex-shrink: 0
+        @media screen and ( max-width: $md1+px )
+          max-width: 450px
+          flex-basis: 450px
+          margin-left: 20px
+        @media screen and ( max-width: $md2+px )
+          margin-left: 0
+        @media screen and ( max-width: $md3+px )
+          max-width: 670px
+          flex-basis: 670px
+
+      input
+        background-color: rgb(255, 255, 255)
+        width: 100%
+        height: 77px
+        border: 0
+        margin-right: 27px
+        padding-left: 30px
+        font-size: 24px
+        font-family: "Open Sans"
+        color: rgb(0, 0, 0)
+        margin-bottom: 20px
+        @media screen and ( max-width:  $md2+px )
+          width: 100%
+          margin-bottom: 15px
+          margin-right: 0
+        @media screen and ( max-width:  $md3+px )
+          height: 77px
+          max-width: 514px
+          margin: 0 auto 21px
+          display: block
+        @media screen and ( max-width:  $md4+px )
+          height: 60px
+          font-size: 20px
+
+      .input-tel
+        position: relative
+        margin-bottom: 20px
+
+        input
+          padding-left: 80px
+          margin-bottom: 0
+
+        img
+          position: absolute
+          width: 20px
+          height: 20px
+          top: 50%
+          transform: translateY(-50%)
+          left: 30px
+
+      button
+        background-color: rgb(240, 51, 104)
+        width: 398px
+        height: 75px
+        border: 0
+        flex-shrink: 0
+        font-size: 24px
+        color: rgb(255, 255, 255)
+        font-weight: bold
+        @media screen and ( max-width:  $md3+px )
+          width: 342px
+          font-size: 30px
+          margin: 0 auto
+          display: block
+        @media screen and ( max-width:  $md4+px )
+          width: 250px
+          height: 55px
+          font-size: 20px
+
+        &:hover
+          background: #fff
+          color: rgb(240, 51, 104)
+
+        &:focus
+          background: #fff
+          color: rgb(240, 51, 104)
+
+        span
+          @media screen and ( max-width:  $md3+px )
+            display: none
+
+    .check
+      display: flex
+      justify-content: center
+      position: relative
+      margin-bottom: 16px
+      @media screen and ( max-width:  $md2+px )
+        margin: 30px 0 39px
+      @media screen and ( max-width:  $md4+px )
+        margin: 10px 0 29px
+
+      input
+        position: absolute
+        left: -9999px
+        display: none
+
+      input:checked + label:before
+        background-image: url(../images/dist/icon/check.svg)
+        background-size: 15px
+        background-position: center
+        background-repeat: no-repeat
+
+      label
+        font-size: 18px
+        color: rgb(255, 255, 255)
+        position: relative
+        cursor: pointer
+        @media screen and ( max-width:  $md3+px )
+          padding-left: 10px
+        @media screen and ( max-width:  650px )
+          padding-left: 30px
+          font-size: 16px
+
+        &::before
+          content: ""
+          background-color: rgb(255, 255, 255)
+          position: absolute
+          width: 19px
+          height: 19px
+          left: -41px
+          top: 0px
+          @media screen and ( max-width:  $md3+px )
+            left: -52px
+            width: 36px
+            height: 37px
+            top: -9px
+          @media screen and ( max-width:  650px )
+            left: 0
+            top: 0
+            width: 19px
+            height: 19px

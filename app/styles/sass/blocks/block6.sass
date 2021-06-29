@@ -1,0 +1,81 @@
+.holidays
+  padding: 82px 0 50px
+  @media screen and ( max-width: $md3+px )
+    padding: 10px 0 50px
+
+  .container
+    max-width: 1290px
+
+  h2
+    font-size: 50px
+    color: rgb(4, 161, 244)
+    text-align: center
+    max-width: 560px
+    margin: 0 auto 34px
+    line-height: 1
+    @media screen and ( max-width: $md2+px )
+      font-size: 40px
+    @media screen and ( max-width: $md3+px )
+      margin-bottom: 58px
+    @media screen and ( max-width: $md4+px )
+      font-size: 30px
+      margin-bottom: 60px
+      color: #fff
+
+  .swiper-slide
+    height: 355px
+    @media screen and ( max-width: $md3+px )
+      height: auto
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  .slider-container
+    position: relative
+    @media screen and ( max-width: $md3+px )
+      max-width: 690px
+      margin: 0 auto
+
+  .swiper-button-next img, .swiper-button-prev img
+    transition: .2s linear
+
+  .swiper-button-next:hover img, .swiper-button-prev:hover img
+    transform: scale(1.2)
+
+  .swiper-button-next:focus img, .swiper-button-prev:focus img
+    transform: scale(1.2)
+
+  .swiper-button-next, .swiper-button-prev
+    height: auto
+    width: auto
+    @media screen and ( max-width: 1450px )
+      display: none
+
+  .swiper-button-next:after, .swiper-button-prev:after
+    display: none
+
+  .swiper-button-prev
+    left: -84px
+    margin-top: -42px
+
+  .swiper-button-next
+    right: -84px
+    margin-top: -42px
+
+  .swiper-pagination2
+    justify-content: center
+    margin: 28px 0
+    display: none
+    @media screen and ( max-width: 1450px )
+      display: flex
+
+    span
+      background-color: rgb(4, 161, 244)
+      width: 12px
+      height: 12px
+      margin: 0 11px
+
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 11px

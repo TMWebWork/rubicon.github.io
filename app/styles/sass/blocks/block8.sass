@@ -1,0 +1,141 @@
+.review
+  padding: 81px 0 240px
+  @media screen and ( max-width: $md3+px )
+    padding: 50px 0 10px
+
+  .container
+    max-width: 1100px
+
+  .title
+    background-color: rgb(4, 161, 244)
+    max-width: 672px
+    height: 120px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 30px
+    @media screen and ( max-width: $md3+px )
+      max-width: 589px
+    @media screen and ( max-width: $md4+px )
+      margin: 0 -15px 30px
+
+    h2
+      font-size: 50px
+      text-align: center
+      color: #fff
+      line-height: 1
+      @media screen and ( max-width: $md2+px )
+        font-size: 40px
+      @media screen and ( max-width: $md4+px )
+        font-size: 30px
+
+  .slider-container
+    position: relative
+
+  .swiper-buttton
+    position: absolute
+    top: 130px
+    cursor: pointer
+    @media screen and ( max-width: 1450px )
+      display: none
+
+  .swiper-rev-next
+    right: -125px
+
+  .swiper-rev-prev
+    left: -125px
+
+  .swiper-rev-next img, .swiper-rev-prev img
+    transition: .2s linear
+
+  .swiper-rev-next:hover img, .swiper-rev-prev:hover img
+    transform: scale(1.2)
+
+  .swiper-rev-next:focus img, .swiper-rev-prev:focus img
+    transform: scale(1.2)
+
+  .col-img
+    width: 250px
+    @media screen and ( max-width: $md2+px )
+      max-width: 50%
+      flex-basis: 50%
+      text-align: center
+      padding-top: 20px
+    @media screen and ( max-width: $md4+px )
+      max-width: 100%
+      flex-basis: 100%
+      padding-top: 0
+      margin-bottom: 20px
+
+    img
+      width: 208px
+      height: 208px
+      border-radius: 50%
+      object-fit: cover
+      margin-bottom: 18px
+
+    h3
+      font-size: 24px
+      color: #000
+      text-align: center
+      width: 196px
+      @media screen and ( max-width: $md2+px )
+        margin: 0 auto
+
+  .col-text
+    width: 330px
+    margin-top: 83px
+    position: relative
+    margin-bottom: 40px
+    @media screen and ( max-width: $md2+px )
+      max-width: 50%
+      flex-basis: 50%
+      margin-top: 50px
+    @media screen and ( max-width: $md4+px )
+      max-width: 100%
+      flex-basis: 100%
+
+    p
+      font-size: 18px
+      color: #000
+      line-height: 1.2
+      position: relative
+
+      &::before
+        content: url(../images/dist/icon/quote-top.png)
+        position: absolute
+        top: -42px
+        left: -43px
+        @media screen and ( max-width: $md4+px )
+          left: 0
+
+      &::after
+        content: url(../images/dist/icon/quote-bottom.png)
+        position: absolute
+        bottom: -50px
+        right: 15px
+
+  .review-block
+
+    .flex
+      justify-content: space-between
+      @media screen and ( max-width: $md2+px )
+        flex-wrap: wrap
+        justify-content: flex-end
+
+  .swiper-pagination3
+    justify-content: center
+    margin: 28px 0
+    display: none
+    @media screen and ( max-width: 1450px )
+      display: flex
+
+    span
+      background-color: #db084a
+      width: 12px
+      height: 12px
+      margin: 0 11px
+
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 11px

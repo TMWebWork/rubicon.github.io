@@ -1,0 +1,37 @@
+.footer
+  padding: 99px 0
+  @media screen and ( max-width: $md2+px )
+    padding: 50px 0
+  @media screen and ( max-width: $md3+px )
+    display: none
+
+  .container
+    max-width: 1146px
+
+  .nav-menu
+
+    ul
+      display: flex
+      align-items: center
+      justify-content: space-between
+      list-style: none
+      margin: 0
+
+      span
+        background-color: rgb(227, 3, 87)
+        width: 3px
+        height: 23px
+        display: block
+
+      a
+        font-size: 18px
+        color: rgba(36, 36, 36, 0.529)
+        line-height: 1.2
+
+        &:hover
+          color: rgb(255, 67, 129)
+          -webkit-text-stroke: 1px rgb(255, 67, 129)
+
+        &:focus
+          color: rgb(255, 67, 129)
+          -webkit-text-stroke: 1px rgb(255, 67, 129)
