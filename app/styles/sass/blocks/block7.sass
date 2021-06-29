@@ -1,0 +1,201 @@
+.teachers
+  padding: 52px 0 0
+  @media screen and ( max-width: $md3+px )
+    padding: 5px 0 0
+
+  .container
+    max-width: 1342px
+
+  h2
+    font-size: 48px
+    color: #02b1cb
+    text-align: center
+    margin-bottom: 73px
+    @media screen and ( max-width: $md2+px )
+      font-size: 40px
+    @media screen and ( max-width: $md3+px )
+      margin-bottom: 35px
+    @media screen and ( max-width: $md4+px )
+      font-size: 30px
+
+    br
+      @media screen and ( max-width: $md2+px )
+        display: none
+
+  .flex
+    flex-wrap: wrap
+    margin: 0 -50px
+    @media screen and ( max-width: $md1+px )
+      margin: 0 -15px
+    @media screen and ( max-width: $md2+px )
+      justify-content: center
+
+    .col
+      max-width: 33.333%
+      flex-basis: 33.333%
+      padding: 0 50px
+      @media screen and ( max-width: $md1+px )
+        padding: 0 15px
+      @media screen and ( max-width: $md2+px )
+        max-width: 50%
+        flex-basis: 50%
+
+  .block
+    margin-bottom: 35px
+    @media screen and ( max-width: $md3+px )
+      max-width: 391px
+      margin: 0 auto
+
+    img
+      margin-bottom: 38px
+      max-width: 100%
+      display: block
+      @media screen and ( max-width: $md3+px )
+        margin-left: 16px
+        margin-bottom: 31px
+      @media screen and ( max-width: $md4+px )
+        max-width: 290px
+        margin: 0 auto 20px
+
+    h3
+      color: #000
+      font-weight: bold
+      font-size: 24px
+      text-align: center
+      margin-left: -50px
+      margin-bottom: 15px
+      @media screen and ( max-width: $md1+px )
+        margin-left: -20px
+      @media screen and ( max-width: $md3+px )
+        font-size: 30px
+      @media screen and ( max-width: $md4+px )
+        font-size: 24px
+
+    .position-block
+      display: flex
+      justify-content: center
+      margin-left: -50px
+      margin-bottom: 5px
+      @media screen and ( max-width: $md1+px )
+        margin-left: -20px
+      @media screen and ( max-width: $md4+px )
+        margin-left: 0
+
+    .position
+      background-color: rgb(6, 220, 237)
+      min-width: 180px
+      padding: 0 10px
+      height: 31px
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      margin: 0 auto
+      font-size: 18px
+      font-weight: bold
+      color: #fff
+      @media screen and ( max-width: $md1+px )
+        font-size: 16px
+      @media screen and ( max-width: $md3+px )
+        font-size: 18px
+
+    .position-2
+      background-color: rgb(41, 172, 233)
+      padding: 0 20px
+
+    .position-3
+      background-color: rgb(4, 222, 254)
+
+    .position-4
+      background-color: rgb(85, 172, 253)
+
+    .position-5
+      background-color: rgb(146, 114, 250)
+      padding: 0 20px
+
+    ul
+      list-style: none
+      margin-bottom: 0
+
+      li
+        font-size: 18px
+        color: #000
+        line-height: 1.2
+        margin-bottom: 2px
+        position: relative
+        @media screen and ( max-width: $md3+px )
+          padding-left: 21px
+
+        &::before
+          content: ""
+          border-radius: 50%
+          background-color: rgb(29, 98, 191)
+          width: 5px
+          height: 5px
+          position: absolute
+          left: -10px
+          top: 9px
+          @media screen and ( max-width: $md3+px )
+            left: 10px
+
+  .swiper-pagination4
+    justify-content: center
+    margin: 28px 0
+    display: none
+    @media screen and ( max-width: 1450px )
+      display: flex
+
+    span
+      background-color: rgb(4, 161, 244)
+      width: 12px
+      height: 12px
+      margin: 0 11px
+
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 11px
+
+  .slider-container
+    position: relative
+    max-width: 391px
+    margin: 0 auto
+
+  .swiper-tec-next:hover img, .swiper-tec-prev:hover img
+    transform: scale(1.2)
+
+  .swiper-tec-next:focus img, .swiper-tec-prev:focus img
+    transform: scale(1.2)
+
+  .swiper-tec-next, .swiper-tec-prev
+    height: auto
+    width: auto
+    display: none
+    position: absolute
+    top: 144px
+    z-index: 9
+    @media screen and ( max-width: $md3+px )
+      display: block
+    @media screen and ( max-width: $md4+px )
+      top: 175px
+
+    img
+      transition: .2s linear
+      @media screen and ( max-width: $md4+px )
+        height: 60px
+
+  .swiper-tec-next:after, .swiper-tec-prev:after
+    display: none
+
+  .swiper-tec-prev
+    left: -100px
+    margin-top: -42px
+    @media screen and ( max-width: 600px )
+      left: -80px
+    @media screen and ( max-width: $md4+px )
+      left: -10px
+
+  .swiper-tec-next
+    right: -100px
+    margin-top: -42px
+    @media screen and ( max-width: 600px )
+      right: -80px
+    @media screen and ( max-width: $md4+px )
+      right: -10px

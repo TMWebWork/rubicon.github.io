@@ -1,0 +1,137 @@
+.summer
+  position: relative
+
+  &::before
+    content: ""
+    background-color: rgb(0, 195, 224)
+    position: absolute
+    width: 210px
+    height: 121px
+    right: 0
+    top: 107px
+    @media screen and ( max-width: $md2+px )
+      display: none
+
+  .container
+    max-width: 1302px
+
+  h2
+    font-size: 50px
+    color: #04a1f4
+    text-align: center
+    margin-bottom: 47px
+    @media screen and ( max-width: $md2+px )
+      font-size: 40px
+    @media screen and ( max-width: $md4+px )
+      font-size: 30px
+      margin-bottom: 37px
+
+    span
+      display: block
+
+  .swiper-button
+    display: none
+    @media screen and ( max-width: $md3+px )
+      display: block
+      position: absolute
+      top: 79px
+    @media screen and ( max-width: 640px )
+      display: none
+
+  .swiper-mob-next
+    right: -125px
+
+  .swiper-mob-prev
+    left: -125px
+
+  .swiper-mob-next img, .swiper-mob-prev img
+    transition: .2s linear
+
+  .swiper-mob-next:hover img, .swiper-mob-prev:hover img
+    transform: scale(1.2)
+
+  .swiper-mob-next:focus img, .swiper-mob-prev:focus img
+    transform: scale(1.2)
+
+  .swiper-pagination
+    margin: 30px 0 0
+    position: initial
+    display: none
+    @media screen and ( max-width: $md3+px )
+      display: block
+
+    span
+      border-radius: 50%
+      background-color: rgb(4, 161, 244)
+      width: 12px
+      height: 12px
+      margin: 0 10px
+
+  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 10px
+
+  .slider-container
+    @media screen and ( max-width: $md3+px )
+      max-width: 359px
+      margin: 0 auto
+      position: relative
+
+  .block
+
+    img
+      width: 100%
+      height: 248px
+      object-fit: cover
+      margin-bottom: 35px
+
+  .info
+    display: flex
+    justify-content: flex-start
+
+    span
+      border-radius: 50%
+      background-color: rgb(4, 161, 244)
+      width: 52px
+      height: 52px
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 24px
+      color: rgb(255, 255, 255)
+      font-weight: bold
+      flex-shrink: 0
+      margin-left: 2px
+      margin-right: 44px
+      @media screen and ( max-width: $md2+px )
+        margin-right: 30px
+      @media screen and ( max-width: $md3+px )
+        margin-right: 44px
+
+    .text
+      padding-top: 6px
+      position: relative
+      height: 109px
+
+      &::before
+        content: ""
+        background-color: rgba(0,0,0,.502)
+        position: absolute
+        width: 2px
+        height: 109px
+        top: -7px
+        left: -15px
+        @media screen and ( max-width: $md2+px )
+          height: 90px
+        @media screen and ( max-width: $md3+px )
+          height: 109px
+
+      p
+        font-size: 18px
+        color: rgb(0, 0, 0)
+        font-weight: bold
+        line-height: 1.2
+        max-width: 190px
+        @media screen and ( max-width: $md2+px )
+          font-size: 16px
+        @media screen and ( max-width: $md3+px )
+          font-size: 24px

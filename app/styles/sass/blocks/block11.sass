@@ -1,0 +1,226 @@
+.contacts
+  padding: 20px 0 79px
+  @media screen and ( max-width:  $md3+px )
+    padding: 20px 0 130px
+  @media screen and ( max-width:  $md4+px )
+    padding: 20px 0 90px
+
+  h2
+    font-size: 50px
+    color: rgb(255, 255, 255)
+    text-align: center
+    margin-bottom: 49px
+    @media screen and ( max-width:  $md3+px )
+      font-size: 40px
+      max-width: 421px
+      margin: 0 auto 62px
+    @media screen and ( max-width:  $md4+px )
+      font-size: 30px
+      margin: 0 auto 32px
+
+  .soc-link
+    display: flex
+    justify-content: center
+    margin-bottom: 70px
+    @media screen and ( max-width:  $md3+px )
+      margin-bottom: 41px
+
+    li
+      list-style: none
+      margin: 0 15px
+
+      a:focus svg path
+        fill: #f03368
+
+      a:hover svg path
+        fill: #f03368
+
+      img
+        height: 44px
+        @media screen and ( max-width:  $md4+px )
+          height: 30px
+
+      svg
+        height: 44px
+        width: 44px
+        @media screen and ( max-width:  $md4+px )
+          height: 30px
+
+  &-phone
+    display: flex
+    justify-content: center
+    margin-bottom: 98px
+    @media screen and ( max-width:  $md3+px )
+      margin-bottom: 57px
+
+    a
+      font-size: 72px
+      color: rgb(255, 255, 255)
+      font-weight: bold
+      @media screen and ( max-width:  $md3+px )
+        font-size: 60px
+      @media screen and ( max-width:  $md4+px )
+        font-size: 35px
+
+      &:hover
+        color: #ff4381
+
+      &:focus
+        color: #ff4381
+
+  .form-block
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 47px
+    @media screen and ( max-width:  $md2+px )
+      flex-direction: column
+
+    input
+      background-color: rgb(255, 255, 255)
+      width: 447px
+      height: 79px
+      border: 0
+      margin-right: 27px
+      padding-left: 30px
+      font-size: 24px
+      font-family: "Open Sans"
+      color: rgb(0, 0, 0)
+      @media screen and ( max-width:  $md2+px )
+        width: 100%
+        margin-right: 0
+        margin-bottom: 15px
+      @media screen and ( max-width:  $md3+px )
+        height: 77px
+        max-width: 514px
+        margin: 0 auto 21
+      @media screen and ( max-width:  $md4+px )
+        height: 60px
+        font-size: 20px
+
+    .input-tel
+      position: relative
+      width: 100%
+      @media screen and ( max-width:  $md2+px )
+        margin-bottom: 15px
+      @media screen and ( max-width:  $md3+px )
+        max-width: 514px
+        margin: 0 auto 21
+
+      input
+        @media screen and ( max-width:  $md2+px )
+          margin-bottom: 0
+        @media screen and ( max-width:  $md3+px )
+          margin: 0 auto 0
+
+      input
+        padding-left: 86px
+
+      img
+        position: absolute
+        width: 20px
+        height: 20px
+        top: 50%
+        transform: translateY(-50%)
+        left: 28px
+
+    button
+      background-color: rgb(240, 51, 104)
+      width: 255px
+      height: 79px
+      border: 0
+      flex-shrink: 0
+      font-size: 24px
+      color: rgb(255, 255, 255)
+      font-weight: bold
+      @media screen and ( max-width:  $md3+px )
+        width: 342px
+        font-size: 30px
+      @media screen and ( max-width:  $md4+px )
+        width: 250px
+        height: 55px
+        font-size: 20px
+
+      &:hover
+        background: #fff
+        color: rgb(240, 51, 104)
+
+      &:focus
+        background: #fff
+        color: rgb(240, 51, 104)
+
+  .check
+    display: flex
+    justify-content: center
+    position: relative
+    @media screen and ( max-width:  $md2+px )
+      margin: 9px 0 39px
+    @media screen and ( max-width:  $md4+px )
+      margin: 9px 0 29px
+
+    input
+      position: absolute
+      left: -9999px
+      display: none
+
+    input:checked + label:before
+      background-image: url(../images/dist/icon/check.svg)
+      background-size: 15px
+      background-position: center
+      background-repeat: no-repeat
+
+    label
+      font-size: 18px
+      color: rgb(255, 255, 255)
+      position: relative
+      cursor: pointer
+      @media screen and ( max-width:  $md3+px )
+        padding-left: 10px
+      @media screen and ( max-width:  650px )
+        padding-left: 30px
+        font-size: 16px
+
+      &::before
+        content: ""
+        background-color: rgb(255, 255, 255)
+        position: absolute
+        width: 19px
+        height: 19px
+        left: -32px
+        top: 1px
+        @media screen and ( max-width:  $md3+px )
+          left: -52px
+          width: 36px
+          height: 37px
+          top: -9px
+        @media screen and ( max-width:  650px )
+          left: 0
+          top: 0
+          width: 19px
+          height: 19px
+
+  .arrow-top
+    display: none
+    @media screen and ( max-width:  $md3+px )
+      display: block
+      position: absolute
+      border-radius: 50%
+      background-color: rgb(240, 51, 104)
+      position: absolute
+      width: 103px
+      height: 103px
+      display: flex
+      justify-content: center
+      align-items: center
+      right: 37px
+      bottom: 164px
+    @media screen and ( max-width:  650px )
+      right: 10px
+      height: 70px
+      width: 70px
+    @media screen and ( max-width:  $md4+px )
+      bottom: 40px
+
+    img
+      @media screen and ( max-width:  650px )
+        height: 80%

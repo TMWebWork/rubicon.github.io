@@ -1,0 +1,223 @@
+.top-form
+  padding: 0 0 40px
+
+  .container
+    max-width: 1400px
+
+  .title
+    background-color: rgb(1, 114, 193)
+    max-width: 905px
+    height: 121px
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 20px
+    position: relative
+    z-index: 99
+    @media screen and ( max-width: $md3+px )
+      margin: 0 -15px 12px
+      height: auto
+      padding: 20px 15px
+
+    h2
+      font-size: 50px
+      font-weight: bold
+      text-align: center
+      color: #fff
+      line-height: 1
+      margin-bottom: 0
+      @media screen and ( max-width: $md2+px )
+        font-size: 40px
+      @media screen and ( max-width: $md4+px )
+        font-size: 30px
+
+    br
+      @media screen and ( max-width: $md3+px )
+        display: none
+
+  h4
+    color: #fff
+    text-align: center
+    font-size: 24px
+    margin-bottom: 32px
+    @media screen and ( max-width: $md3+px )
+      font-size: 30px
+    @media screen and ( max-width: 600px )
+      font-size: 24px
+
+    br
+      @media screen and ( max-width: $md3+px )
+        display: none
+
+  .image
+    max-width: 589px
+    text-align: right
+    margin: -4px auto -35px
+    position: relative
+    @media screen and ( max-width: $md3+px )
+      margin: 69px auto -48px
+    @media screen and ( max-width: $md4+px )
+      margin: 69px auto -18px
+
+    img
+      @media screen and ( max-width: $md3+px )
+        width: 500px
+        margin-right: -40px
+      @media screen and ( max-width: 600px )
+        width: 440px
+      @media screen and ( max-width: $md4+px )
+        width: 290px
+
+    .circle
+      border-radius: 50%
+      background-color: rgb(255, 255, 255)
+      width: 149px
+      height: 149px
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 24px
+      color: #f03333
+      font-weight: bold
+      position: absolute
+      top: 92px
+      left: -59px
+      transform: rotate(-13deg)
+      text-align: center
+      @media screen and ( max-width: $md3+px )
+        width: 203px
+        height: 204px
+        font-size: 30px
+        top: 60px
+        left: -52px
+      @media screen and ( max-width: 600px )
+        left: 0
+      @media screen and ( max-width: $md4+px )
+        width: 120px
+        height: 120px
+        font-size: 18px
+        left: 0
+
+  .flex
+    @media screen and ( max-width: $md3+px )
+      flex-wrap: wrap
+      justify-content: center
+
+    .col
+      max-width: 33.333%
+      flex-basis: 33.333%
+      @media screen and ( max-width: $md3+px )
+        max-width: 50%
+        flex-basis: 50%
+
+      &:last-child
+        @media screen and ( max-width: $md3+px )
+          max-width: 100%
+          flex-basis: 100%
+
+      &:last-child .block
+        @media screen and ( max-width: $md3+px )
+          max-width: 320px
+        @media screen and ( max-width: $md4+px )
+          max-width: 290px
+
+    .block
+      max-width: 230px
+      text-align: center
+      margin: 0 auto
+
+      img
+        margin-bottom: 37px
+
+      p
+        font-size: 18px
+        color: #fff
+        font-weight: 700
+        line-height: 1.2
+        @media screen and ( max-width: $md3+px )
+          font-size: 24px
+        @media screen and ( max-width: $md4+px )
+          font-size: 18px
+
+  .flex
+    margin-bottom: 28px
+
+  .form
+    max-width: 601px
+    margin: 0 auto
+
+    input
+      background-color: rgb(255, 255, 255)
+      width: 100%
+      height: 76px
+      border: 0
+      margin-right: 27px
+      padding-left: 20px
+      font-size: 18px
+      font-family: "Open Sans"
+      color: rgb(0, 0, 0)
+      margin-bottom: 10px
+      @media screen and ( max-width: $md4+px )
+        height: 55px
+
+    .input-tel
+      position: relative
+      margin-bottom: 30px
+      @media screen and ( max-width: $md3+px )
+        margin-bottom: 40px
+      @media screen and ( max-width: $md4+px )
+        margin-bottom: 20px
+
+      input
+        padding-left: 86px
+        margin-bottom: 0
+        @media screen and ( max-width: $md4+px )
+          padding-left: 60px
+
+      img
+        position: absolute
+        width: 20px
+        height: 20px
+        top: 50%
+        transform: translateY(-50%)
+        left: 34px
+        @media screen and ( max-width: $md4+px )
+          left: 20px
+
+    button
+      background-color: rgb(240, 51, 104)
+      width: 369px
+      height: 68px
+      border: 0
+      flex-shrink: 0
+      font-size: 24px
+      color: rgb(255, 255, 255)
+      font-weight: bold
+      margin: 18px auto
+      display: block
+      @media screen and ( max-width: $md3+px )
+        width: 342px
+        height: 79px
+        margin: 0 auto 13px
+      @media screen and ( max-width: $md4+px )
+        height: 55px
+        width: 100%
+
+      &:hover
+        background: #fff
+        color: rgb(240, 51, 104)
+
+      &:focus
+        background: #fff
+        color: rgb(240, 51, 104)
+
+    h6
+      font-size: 18px
+      font-weight: normal
+      text-align: center
+      color: #fff
+      @media screen and ( max-width: $md3+px )
+        font-size: 24px
+      @media screen and ( max-width: $md4+px )
+        font-size: 18px
