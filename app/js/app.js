@@ -1,20 +1,44 @@
+"use strict";
+
 import $ from 'jquery'
 window.jQuery = $
 window.$ = $
 
 import Swiper from 'swiper/bundle';
+import magnific from 'magnific-popup';
 
-let magnific = require('magnific-popup');
+$(document).ready(function () {
+	// region Register toggle menu for header
+	$(".burger").click(function () {
+		$(this).toggleClass("on");
+		$(".header-menu")
+			.slideToggle()
+			.toggleClass("menu-active");
+		$("body").toggleClass("menu_expand")
+	});
+	$('.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				$('html, body').animate({
+					scrollTop: (target.offset().top)
+				}, 1000);
+				return false;
+			}
+		}
+	});
+	$('.js-scroll-trigger').click(function () {
+		if ($(window).width() < 768) {
+			jQuery(".header-menu").slideUp();
+			jQuery(".btn-menu").removeClass("on");
+			$(".burger").removeClass("on");
+			$("body").removeClass("menu_expand");
+		}
+	});
+	// endregion
 
-
-/**
- * downCount: Simple Countdown clock with offset
- * Author: Sonny T. <hi@sonnyt.com>, sonnyt.com
- */
-
-
-(function ($) {
-
+	// region Create timer
 	$.fn.downCount = function (options, callback) {
 		var settings = $.extend({
 			date: null,
@@ -46,9 +70,7 @@ let magnific = require('magnific-popup');
 			var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
 
 			// set new Date object
-			var new_date = new Date(utc + (3600000 * settings.offset))
-
-			return new_date;
+			return new Date(utc + (3600000 * settings.offset));
 		};
 
 		/**
@@ -110,52 +132,86 @@ let magnific = require('magnific-popup');
 		// start
 		var interval = setInterval(countdown, 1000);
 	};
-
-})(jQuery);
-
-
-// // Import vendor jQuery plugin example (not module)
-// require('~/app/libs/mmenu/dist/mmenu.js')
-
-document.addEventListener('DOMContentLoaded', () => {
-
-
-	//* Register
-	function damaxRegister() {
-		damaxToggleMenu();
-	}
-	damaxRegister();
-
-
-
-	$(".input-tel input").attr("data-inputmask", "'mask': '+7 (9999) 99 99 99'");
-
-	$('.input-tel input').inputmask();
-
-	$(".input-tel input").attr("inputmode", "decimal");
-
-
-	$('.input-tel input').focus(function () {
-		$(this).data('placeholder', $(this).attr('placeholder')).attr('placeholder', '+7');
+	// Set date/time for timer
+	$('.countdown').downCount({
+		date: '07/1/2021 10:20:00',
+		offset: +3
 	});
+	// endregion
 
-	$('.input-tel input').focusout(function () { $(this).data('placeholder', $(this).attr('placeholder')).attr('placeholder', '+7'); });
+	// region Validate inputs
+	$(".age-input")
+		.attr("inputmode", "decimal")
+		.focus(function () {
+			$(this).data('placeholder', $(this).attr('placeholder')).attr('placeholder', 'Возраст ребенка');
+		})
+		.focusout(function () { $(this).data('placeholder', $(this).attr('placeholder')).attr('placeholder', 'Возраст ребенка'); });
 
-	$(".age-input").attr("data-inputmask", "'mask': '9{1,2}'");
-
-	$('.age-input').inputmask();
-
-	$(".age-input").attr("inputmode", "decimal");
-
-	$('.age-input').focus(function () {
-		$(this).data('placeholder', $(this).attr('placeholder')).attr('placeholder', 'Возраст ребенка, лет');
+	var items = $('input[type="tel"]');
+	Array.prototype.forEach.call(items, function (element) {
+		new IMask(element, {
+			mask: '{+7} (#00) 000-00-00',
+			placeholderLazy: {
+				show: 'always'
+			},
+			definitions: {
+				'#': /[0-79]/
+			}
+		});
 	});
+	// endregion
 
-	$('.age-input').focusout(function () { $(this).data('placeholder', $(this).attr('placeholder')).attr('placeholder', 'Возраст ребенка, лет'); });
+	// region Create popup
+	setTimeout(() => {
+		$('.popup-btn').magnificPopup({
+			type: 'inline',
+			duration: 400,
+			removalDelay: 500,
+			callbacks: {
+				beforeOpen: function () {
+					this.st.mainClass = this.st.el.attr('data-effect');
+				}
+			},
+			midClick: true
+		});
+		$('.close-popup').click(function (event) {
+			event.preventDefault();
+			$.magnificPopup.close();
+		});
+	}, 0)
+	// endregion
 
+	// region Submit forms
+	$(".entry-form").submit(function(e) {
+		e.preventDefault();
+		var form = $(this);
+		var error = false;
+		form.find('.input[type="tel"]').each(function () {
+			if ($(this).val() === '' || $(this).val().length < 18) {
+				$(this).addClass("form-red");
+				error = true; // ошибка
+			}
+		});
+		$('input').click(function () {
+			$(this).removeClass('form-red');
+		});
 
+		if(!error) {
+			$.ajax({
+				url: '/php/sendMail.php',
+				method: 'post',
+				data: $(form).serialize(),
+				success: function(data){
+					alert(data);
+				}
+			});
+		}
 
-	const swiper = new Swiper(".holidays-swiper", {
+	});
+	// endregion
+
+	// region Set carousel to sections
+	new Swiper(".holidays-swiper", {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		loop: true,
@@ -186,8 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		},
 	});
-
-	const swiper2 = new Swiper(".summer-swiper", {
+	new Swiper(".summer-swiper", {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		loop: false,
@@ -218,9 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		},
 	});
-
-
-	const swiper3 = new Swiper(".review-swiper", {
+	new Swiper(".review-swiper", {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		loop: true,
@@ -252,8 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		},
 	});
-
-	const swiper4 = new Swiper(".teachers-swiper", {
+	new Swiper(".teachers-swiper", {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		loop: true,
@@ -285,31 +337,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		},
 	});
+	// endregion
 
-
-	function damaxToggleMenu() {
-		$(".burger").click(function () {
-			$(this).toggleClass("on");
-			$(".header-menu").slideToggle();
-			$(".header-menu").toggleClass("menu-active");
-			$("body").toggleClass("menu_expand")
-		});
-	}
-
-
-
-	$('.countdown').downCount({
-		date: '06/25/2021 10:20:00',
-		offset: +3
-	}, function () {
-	});
-
-
+	// region Stand up to landing top
 	$(".arrow-top").on("click", function () {
 		$("html").animate({ scrollTop: 0 }, "slow");
 	});
+	// endregion
 
-
+	// region Create accordion functional
 	$(".faq-title").on("click", function () {
 		if ($(this).hasClass("active")) {
 			$(this).removeClass("active");
@@ -321,55 +357,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			$(this).siblings(".faq-content").slideDown(200);
 		}
 	});
+	// endregion
 
-
-	(function ($) {
-		"use strict";
-
-		$('.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-				var target = $(this.hash);
-				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-				if (target.length) {
-					$('html, body').animate({
-						scrollTop: (target.offset().top)
-					}, 1000);
-					return false;
-				}
-			}
-		});
-
-
-		$('.js-scroll-trigger').click(function () {
-			if ($(window).width() < 768) {
-				jQuery(".header-menu").slideUp();
-				jQuery(".btn-menu").removeClass("on");
-				$(".burger").removeClass("on");
-				$("body").removeClass("menu_expand");
-			}
-		});
-
-	})(jQuery);
-
-
-	$('.popup-btn').magnificPopup({
-		type: 'inline',
-		duration: 400,
-		removalDelay: 500,
-		callbacks: {
-			beforeOpen: function () {
-				this.st.mainClass = this.st.el.attr('data-effect');
-			}
-		},
-		midClick: true
-	});
-
-	$('.close-popup').click(function (event) {
-		event.preventDefault();
-		$.magnificPopup.close();
-	});
-
-
+	// region SVG icons
 	$('.svg-image').each((i, e) => {
 		var $img = $(e);
 		var imgID = $img.attr('id');
@@ -390,5 +380,5 @@ document.addEventListener('DOMContentLoaded', () => {
 			$img.replaceWith($svg);
 		}, 'xml');
 	});
-
+	// endregion
 })
