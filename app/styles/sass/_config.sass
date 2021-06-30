@@ -17,7 +17,8 @@ $md3: 767.98
 $md4: 575.98
 
 // IMPORT SECTION
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+//noinspection ALL
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic)
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
 @import 'node_modules/swiper/swiper.scss'
 @import 'node_modules/magnific-popup/src/css/main.scss'
@@ -155,13 +156,14 @@ ul
 .menu_expand
 	overflow: hidden
 
+//noinspection ALL
 .middle-bg
 	background-image: url(../images/dist/middle-bg.jpg)
 	background-position: top center
 	background-repeat: no-repeat
 	@media screen and ( max-width: 750px )
 		background-image: url(../images/dist/middle-mob-bg.jpg)
-
+//noinspection ALL
 .bottom-bg
 	background-image: url(../images/dist/bottom-bg.jpg)
 	background-position: bottom center
@@ -220,3 +222,20 @@ ul
 
 .mfp-bg
 	background: rgba(0, 0, 0, 0.9)
+
+.input-tel
+	position: relative
+
+.input-tel:before
+	content: 'Некорректный номер'
+	position: absolute
+	font-size: 14px
+	color: red
+	bottom: 2px
+	left: 42%
+	opacity: 0
+	transition: all 150ms ease-in-out 0ms
+
+.input-tel.form-red:before
+	opacity: 1
+
