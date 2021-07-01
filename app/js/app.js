@@ -201,7 +201,7 @@ $(document).ready(function () {
 	$('input[name=phone]').click(function () {
 		$(this).parent('.input-tel').removeClass('form-red');
 	});
-	$(".entry-form").submit(function(e) {
+	$(".entry-form").submit((e) => {
 		e.preventDefault();
 		let $formName, $utm, $form = $(this), $error = false;
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
 		null != i().utm_source && ($utm = "&utm_source=" + i().utm_source + "&utm_medium=" + i().utm_medium + "&utm_campaign=" + i().utm_campaign + "&utm_term=" + i().utm_term);
 		if(!$error) {
 			$.ajax({
-				url: '/php-scripts/sendMail.php',
+				url: '/php/sendMail.php',
 				method: 'post',
 				data: $($form).serialize() + $utm,
 				success: function(data){
