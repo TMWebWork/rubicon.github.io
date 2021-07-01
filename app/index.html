@@ -159,11 +159,11 @@
             </div>
           </div>
         </div>
-        <div id="entry-form-1" class="form">
-          <form class="entry-form">
+        <div class="form">
+          <form id="entry-form-1" class="entry-form">
             <input type="text" name="name" placeholder="Ваше имя" required>
             <div class="input-tel">
-              <input type="tel" name="phone" placeholder="+7" required>
+              <input type="tel" name="phone" placeholder="+7" required class="form-red">
               <img src="images/dist/icon/russia.svg" alt="Россия">
             </div>
             <input type="hidden" name="form-name" value="Узнайте, как устроить ребенка на каникулы в Летний IT-клуб">
@@ -744,13 +744,14 @@
               интересов и уровня
               подготовки вашего
               ребенка</h2>
-            <form class="entry-form">
-              <input class="age-input" type="text" placeholder="Возраст ребенка" required>
-              <input type="text" placeholder="Ваше имя" required>
+            <form id="entry-form-2" class="entry-form">
+              <input class="age-input" type="text" name="age" placeholder="Возраст ребенка, лет" required>
+              <input type="text" name="name" placeholder="Ваше имя" required>
               <div class="input-tel">
-                <input type="tel" placeholder="+7" required>
+                <input type="tel" name="phone" placeholder="+7" required>
                 <img src="images/dist/icon/russia.svg" alt="Россия">
               </div>
+              <input type="hidden" name="form-name" value="Менеджер поможет подобрать смену">
               <div class="check">
                 <input id="check3" type="checkbox">
                 <label for="check3">С политикой конфиденциальности ознакомлен и согласен</label>
@@ -842,13 +843,14 @@
         <div class="contacts-phone">
           <a href="tel:+74872515221">+7 (4872) 51-52-21</a>
         </div>
-        <form class="entry-form">
+        <form id="entry-form-3" class="entry-form">
           <div class="form-block">
-            <input type="text" placeholder="Ваше имя" required>
+            <input type="text" name="name" placeholder="Ваше имя" required>
             <div class="input-tel">
-              <input type="tel" id="selector" placeholder="+7" required>
+              <input type="tel" name="phone" id="selector" placeholder="+7" required>
               <img src="images/dist/icon/russia.svg" alt="Россия">
             </div>
+            <input type="hidden" name="form-name" value="Давайте дружить в социальных сетях">
             <div class="d-block d-lg-none">
               <div class="check">
                 <input id="check2" type="checkbox">

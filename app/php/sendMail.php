@@ -7,9 +7,11 @@ if ($_POST) {
     $message = " \r\n";
     if($_POST["age"] != ''){
         $message .= "Возраст: " .$_POST["age"]. "<br>\r\n";
+        $message .= "Имя: " .$_POST["name"]. "<br>\r\n";
         $message .= "Телефон: " .$_POST["phone"]. "<br>\r\n";
         $message .= "Форма: " .$_POST["form-name"]. "<br>\r\n";
     } else {
+        $message .= "Имя: " .$_POST["name"]. "<br>\r\n";
         $message .= "Телефон: " .$_POST["phone"]. "<br><br>\r\n";
         $message .= "Форма: " .$_POST["form-name"]. "<br>\r\n";
     }
@@ -36,7 +38,6 @@ $message";
 
     /* AMO.CRM */
 
-    /*
     $_REQUEST = array_merge($_REQUEST, $_COOKIE);
     $url_delivery_amo = 'https://apicrm.ru/amo/domain/it-academy-deti.rubiconpro.ru/send.php';
     $curl = curl_init();
@@ -47,7 +48,6 @@ $message";
     curl_setopt($curl,CURLOPT_HEADER,false);
     curl_exec($curl);
     curl_close($curl); #Заверашем сеанс cURL
-    */
 
     /* /AMO.CRM */
     if (mail($to, $subject, $message, $headers)) {
