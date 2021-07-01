@@ -182,27 +182,47 @@ $(document).ready(function () {
 	// endregion
 
 	// region Submit forms
+	function TopMailFGoalSend($form) {
+		console.log({ id: "3220344", type: "reachGoal", goal: $form });
+		var _tmr = window._tmr || (window._tmr = []);
+		_tmr.push({ id: "3220344", type: "reachGoal", goal: $form });
+	}
+	function GaGoalSend($form) {
+		console.log('event', 'submit', {'event_category': $form.toString()});
+		gtag('event', 'submit', {'event_category': $form.toString()});
+	}
+	function i() {
+		for (var e, t = [], i = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"), s = 0; s < i.length; s++)
+			e = i[s].split("="),
+				t.push(e[0]),
+				t[e[0]] = e[1];
+		return t
+	}
+	$('input[name=phone]').click(function () {
+		$(this).parent('.input-tel').removeClass('form-red');
+	});
 	$(".entry-form").submit(function(e) {
 		e.preventDefault();
-		var form = $(this);
-		var error = false;
-		form.find('.input[type="tel"]').each(function () {
-			if ($(this).val() === '' || $(this).val().length < 18) {
-				$(this).addClass("form-red");
-				error = true; // ошибка
+		let $formName, $utm, $form = $(this), $error = false;
+
+		$form.find('input[name=phone]').each(function () {
+			if ($(this).val() == '' || $(this).val().replace('_','').length < 18) {
+				$(this).parent('.input-tel').addClass("form-red");
+				$error = true; // ошибка
 			}
 		});
-		$('input').click(function () {
-			$(this).removeClass('form-red');
-		});
-
-		if(!error) {
+		$formName = $form.attr('id');
+		$utm = "",
+		null != i().utm_source && ($utm = "&utm_source=" + i().utm_source + "&utm_medium=" + i().utm_medium + "&utm_campaign=" + i().utm_campaign + "&utm_term=" + i().utm_term);
+		if(!$error) {
 			$.ajax({
-				url: '/php/sendMail.php',
+				url: '/php-scripts/sendMail.php',
 				method: 'post',
-				data: $(form).serialize(),
+				data: $($form).serialize() + $utm,
 				success: function(data){
-					alert(data);
+					console.log(data);
+					GaGoalSend($formName);
+					TopMailFGoalSend($formName);
 				}
 			});
 		}
