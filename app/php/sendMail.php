@@ -1,8 +1,8 @@
 <?php
 if ($_POST) {
-//    $to = "rubiconepro@gmail.com"; // поменять на свой электронный адрес
-    $to = "vafonin@icmark.ru";
-    $from = 'info@rubiconpro.ru';
+    $to = "info@rubiconpro.ru,trekstorgg@gmail.com,savina.mystep@gmail.com,allahrabrova@yandex.rurubiconepro@gmail.com"; // поменять на свой электронный адрес
+//    $to = "vafonin@icmark.ru";
+    $from = 'rubiconepro@gmail.com';
     $subject = 'summer-it-club-rubicone.ru';
     $message = " \r\n";
     if($_POST["age"] != ''){

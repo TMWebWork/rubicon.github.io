@@ -1,0 +1,58 @@
+.popup
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 999
+  display: none
+  align-items: center
+  justify-content: center
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  background-color: rgba(0,0,0,.8)
+
+  &.opened
+    display: flex
+
+  &-container
+    position: relative
+    display: flex
+    flex-direction: column
+    margin: 2em
+    border:
+      radius: 8px
+    padding: 2em 1em
+    background-color: #fff
+    text-align: center
+
+    @media screen and ( min-width: 991px )
+      padding: 10vh 5vw
+      max-width: 50vw
+
+  &-close
+    position: absolute
+    top: 0
+    right: 0
+    display: flex
+    width: 20px
+    height: 20px
+    object-fit: contain
+    transform: translate(-50%, 50%)
+    cursor: pointer
+
+    @media screen and ( min-width: 991px )
+      width: 1.4vw
+      height: 1.4vw
+
+  &-title
+    font-size: 4.2vh
+    font-weight: bold
+    color: #e30357
+
+  &-message
+    font-size: 2.2vh
+    font-weight: 500
+    line-height: 100%
+    color: rgba(36,36,36,.529)
+
+

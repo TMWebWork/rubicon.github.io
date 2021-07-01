@@ -161,24 +161,42 @@ $(document).ready(function () {
 	});
 	// endregion
 
-	// region Create popup
-	setTimeout(() => {
-		$('.popup-btn').magnificPopup({
-			type: 'inline',
-			duration: 400,
-			removalDelay: 500,
-			callbacks: {
-				beforeOpen: function () {
-					this.st.mainClass = this.st.el.attr('data-effect');
-				}
-			},
-			midClick: true
-		});
-		$('.close-popup').click(function (event) {
-			event.preventDefault();
-			$.magnificPopup.close();
-		});
-	}, 0)
+	// region Create popup window for access submit
+	class PopupAccess {
+		constructor({ id }) {
+			this.id = id;
+
+			this.renderPopup();
+		}
+
+		get popupElement() {
+			return $(`[data-id="${this.id}"]`);
+		}
+
+		hidePopup() {
+			this.popupElement.removeClass('opened');
+		}
+		showPopup() {
+			this.popupElement.addClass('opened');
+		}
+
+		renderPopup() {
+			$('.main').append(`<div class="popup" data-id="${this.id}">
+				<div class="popup-container">
+					<div class="popup-close">
+					  <img src="images/dist/icon/cancel.svg" alt="Close popup">
+					</div>
+					<h2 class="popup-title">Ваша заявка принята!</h2>
+					<p class="popup-message">С Вами свяжется наш оператор в ближайшее время.</p>
+				</div>
+			  </div>`)
+
+			$('.popup-close').click(() => {
+				this.hidePopup();
+			})
+		}
+	}
+	const popupAccess = new PopupAccess({id: 'popup-access'})
 	// endregion
 
 	// region Submit forms
@@ -212,7 +230,7 @@ $(document).ready(function () {
 			}
 		});
 		$formName = $form.attr('id');
-		$utm = "",
+		$utm = "";
 		null != i().utm_source && ($utm = "&utm_source=" + i().utm_source + "&utm_medium=" + i().utm_medium + "&utm_campaign=" + i().utm_campaign + "&utm_term=" + i().utm_term);
 		if(!$error) {
 			$.ajax({
@@ -221,6 +239,7 @@ $(document).ready(function () {
 				data: $($form).serialize() + $utm,
 				success: function(data){
 					console.log(data);
+					popupAccess.showPopup();
 					GaGoalSend($formName);
 					TopMailFGoalSend($formName);
 				}
