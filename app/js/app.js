@@ -216,36 +216,54 @@ $(document).ready(function () {
 				t[e[0]] = e[1];
 		return t
 	}
-	$('input[name=phone]').click(function () {
-		$(this).parent('.input-tel').removeClass('form-red');
-	});
-	$(".entry-form").submit((e) => {
-		e.preventDefault();
-		let $formName, $utm, $form = $(this), $error = false;
 
-		$form.find('input[name=phone]').each(function () {
-			if ($(this).val() == '' || $(this).val().replace('_','').length < 18) {
-				$(this).parent('.input-tel').addClass("form-red");
-				$error = true; // ошибка
-			}
-		});
-		$formName = $form.attr('id');
-		$utm = "";
-		null != i().utm_source && ($utm = "&utm_source=" + i().utm_source + "&utm_medium=" + i().utm_medium + "&utm_campaign=" + i().utm_campaign + "&utm_term=" + i().utm_term);
-		if(!$error) {
-			$.ajax({
-				url: '/php/sendMail.php',
-				method: 'post',
-				data: $($form).serialize() + $utm,
-				success: function(data){
-					console.log(data);
-					popupAccess.showPopup();
-					GaGoalSend($formName);
-					TopMailFGoalSend($formName);
-				}
-			});
+	class Form {
+		constructor({ selector }) {
+			this.selector = selector;
+
+			this.formElement.submit(this.submitHandler);
 		}
 
+		get formElement() {
+			return $(this.selector);
+		}
+
+		submitHandler(e) {
+			e.preventDefault();
+			let $formName, $utm, $form = $(this), $error = false;
+
+			console.dir($form)
+
+			$form.find('input[name=phone]').each(function () {
+				if ($(this).val() === '' || $(this).val().replace('_','').length < 18) {
+					$(this).parent('.input-tel').addClass("form-red");
+					$error = true; // ошибка
+				}
+			});
+			$formName = $form.attr('id');
+			$utm = "";
+			null != i().utm_source && ($utm = "&utm_source=" + i().utm_source + "&utm_medium=" + i().utm_medium + "&utm_campaign=" + i().utm_campaign + "&utm_term=" + i().utm_term);
+			if(!$error) {
+				$.ajax({
+					url: '/php/sendMail.php',
+					method: 'post',
+					data: $($form).serialize() + $utm,
+					success: function(data){
+						console.log(data);
+						popupAccess.showPopup();
+						GaGoalSend($formName);
+						TopMailFGoalSend($formName);
+					}
+				});
+			}
+		}
+	}
+	new Form({ selector: '#entry-form-1' })
+	new Form({ selector: '#entry-form-2' })
+	new Form({ selector: '#entry-form-3' })
+
+	$('input[name=phone]').click(function () {
+		$(this).parent('.input-tel').removeClass('form-red');
 	});
 	// endregion
 
