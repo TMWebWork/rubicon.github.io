@@ -37,6 +37,16 @@
       max-width: 464px
       top: 0
 
+    &.mobile
+      display: block
+      @media screen and ( min-width: 767px )
+        display: none
+
+    &.noMobile
+      display: none
+      @media screen and ( min-width: 767px )
+        display: block
+
     img
       @media screen and ( max-width: $md1+px )
         max-width: 100%

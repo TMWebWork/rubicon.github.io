@@ -134,7 +134,7 @@ $(document).ready(function () {
 	};
 	// Set date/time for timer
 	$('.countdown').downCount({
-		date: '07/1/2021 10:20:00',
+		date: '07/10/2021 00:00:00',
 		offset: +3
 	});
 	// endregion
@@ -235,7 +235,7 @@ $(document).ready(function () {
 			console.dir($form)
 
 			$form.find('input[name=phone]').each(function () {
-				if ($(this).val() === '' || $(this).val().replace('_','').length < 18) {
+				if ($(this).val() === '' || $(this).val().replace('_','').length < 15) {
 					$(this).parent('.input-tel').addClass("form-red");
 					$error = true; // ошибка
 				}
