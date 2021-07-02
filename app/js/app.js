@@ -235,7 +235,7 @@ $(document).ready(function () {
 			console.dir($form)
 
 			$form.find('input[name=phone]').each(function () {
-				if ($(this).val() === '' || $(this).val().replace('_','').length < 15) {
+				if ($(this).val() === '' || $(this).val().replace('_','').length < 11) {
 					$(this).parent('.input-tel').addClass("form-red");
 					$error = true; // ошибка
 				}
