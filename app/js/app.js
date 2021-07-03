@@ -150,7 +150,7 @@ $(document).ready(function () {
 	var items = $('input[type="tel"]');
 	Array.prototype.forEach.call(items, function (element) {
 		new IMask(element, {
-			mask: '[*0] (#00) 000-00-00',
+			mask: '+7 (000) 000-00-00',
 			placeholderLazy: {
 				show: 'always'
 			},
